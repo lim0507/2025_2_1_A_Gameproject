@@ -563,7 +563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1384472615}
   - component: {fileID: 1384472614}
-  - component: {fileID: 1384472613}
+  - component: {fileID: 1384472616}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -571,32 +571,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!143 &1384472613
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384472612}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 5
-  m_Radius: 1
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1384472614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,9 +583,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c157b158a86a4cf49a874380daca605a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 3
-  runSpeed: 6
-  rotationSpeed: 10
+  walkSpeed: 30
+  runSpeed: 60
+  rotationSpeed: 100
+  jumpHeight: 10
+  gravity: -90.81
+  landingDuration: 0.3
   attackDuration: 0.8
   canMoveWhileAttacking: 0
   animator: {fileID: 2039373030}
@@ -631,6 +608,32 @@ Transform:
   - {fileID: 2039373029}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &1384472616
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384472612}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 51.12
+  m_Radius: 11.54
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 22.56, z: 0}
 --- !u!1001 &1461396732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -662,7 +665,7 @@ PrefabInstance:
     - target: {fileID: -6601043233671942095, guid: 639d3a94adffe3247b6c74e22c6d0491,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6601043233671942095, guid: 639d3a94adffe3247b6c74e22c6d0491,
         type: 3}
@@ -672,7 +675,7 @@ PrefabInstance:
     - target: {fileID: -6601043233671942095, guid: 639d3a94adffe3247b6c74e22c6d0491,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6601043233671942095, guid: 639d3a94adffe3247b6c74e22c6d0491,
         type: 3}
@@ -687,7 +690,7 @@ PrefabInstance:
     - target: {fileID: -6601043233671942095, guid: 639d3a94adffe3247b6c74e22c6d0491,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -6601043233671942095, guid: 639d3a94adffe3247b6c74e22c6d0491,
         type: 3}
