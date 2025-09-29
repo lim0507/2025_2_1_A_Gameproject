@@ -6,6 +6,7 @@ public class CoinItem : InteractableObject
 {
     [Header("동전 설정")]
     public int coinValue = 10;
+    public string questTag = "Coin";
 
     // Start is called before the first frame update
     protected override void Start()
@@ -19,6 +20,11 @@ public class CoinItem : InteractableObject
     // Update is called once per frame
     protected override void CollectItem()
     {
+        if(QuestManager.Instance != null)
+        {
+            QuestManager.Instance.AddCollectProgress(questTag);
+        }
+
         transform.Rotate(Vector3.up * 360f);
         Destroy(gameObject, 0.5f);
     }
